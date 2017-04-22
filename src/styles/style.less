@@ -1,0 +1,263 @@
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+// mixins
+.flexed(@justify:space-around, @direction:row, @align:center) {
+  display: flex;
+  justify-content: @justify;
+  flex-direction: @direction;
+  align-items: @align;
+}
+
+.sizes(@height:100%, @width:auto) {
+  height: @height;
+  width: @width;
+}
+
+.fontRoboto16(@size:16px, @style:normal, @bold:normal) {
+  font-family: 'Roboto', sans-serif;
+  font-size: @size;
+  font-style: @style;
+  font-weight: @bold;
+}
+.fontOswalt16(@size:16px, @style:normal, @bold:normal) {
+  font-family: 'Oswald', sans-serif;
+  font-size: @size;
+  font-style: @style;
+  font-weight: @bold;
+}
+// colors
+
+@baseOposite: #4897D8;
+@baseWhite: #FEF3E2;
+@baseOrange: #FAAF08;
+@baseRuby: #FA4032;
+
+// styles - GLOBAL
+#wrapper {
+  background-color: @baseWhite;
+  padding-top: 2rem;
+}
+.app {
+  max-width: 650px;
+  min-height: 15rem;
+  margin: 0 auto;
+  background-color: @baseOrange;
+  border-radius: 0.3rem;
+  border: 2px solid (@baseOrange - 30%);
+  box-shadow: 0 0 10px @baseRuby;
+  padding: 1.5rem 8%;
+
+  > button {
+    margin:  0 0 1.5rem 0;
+    border: 2px solid @baseRuby - 40%;
+    border-radius: 0 5px 0 5px;
+    background-color: @baseOrange - 25%;
+    outline: none;
+    .fontOswalt16(0.8rem);
+    letter-spacing: 0.8px;
+  }
+}
+h3 {
+  .fontOswalt16(1.4rem);
+  text-align: center;
+  //background-color: (@baseRuby + 90%);
+  background-color: @baseOposite + 35%;
+  padding: 0.5rem 0;
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+p {
+  .fontRoboto16(0.9rem);
+}
+span {
+  display: inline-block;
+  width: 20px;
+  vertical-align: top;
+  .fontRoboto16(0.9rem);
+}
+.crateTodo {
+  width: 80%;
+  h3 {
+    .fontOswalt16(1.2rem);
+    background-color: transparent;
+    text-align: left;
+  }
+  input {
+    width: 100%;
+    height: 1.4rem;
+    border: none;
+    border-bottom: 2px solid @baseWhite;
+    background-color: transparent;
+    outline: none;
+    .fontOswalt16(1.1rem);
+    color: @baseWhite;
+    font-weight: 300;
+  }
+  button {
+    margin-top: 1rem;
+  }
+}
+
+.list {
+  &-finished, &-active {
+    margin: 0 auto;
+    border: 1px solid @baseRuby - 40%;
+    border-radius: 0.3rem;
+    box-shadow: 3px 3px 15px @baseRuby + 40%;
+    li {
+      min-height: 2rem;
+      line-height: 2rem;
+      padding-left: 10px;
+      p {
+        display: inline-block;
+        width: 70%;
+        word-break: break-all;
+      }
+    }
+  }
+  &-active {
+
+  }
+  &-finished {
+    margin: 2rem 0;
+    p {
+      text-decoration: line-through;
+      font-style: italic;
+      font-weight: lighter;
+      opacity: 0.4;
+    }
+    span {
+      opacity: 0.4;
+      font-style: italic;
+    }
+  }
+}
+
+  // LoggIn
+
+.loggForm {
+  max-width: 25rem;
+  margin: 2rem auto;
+  min-height: 12rem;
+  border: 1px solid @baseOposite - 40%;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 15px @baseOposite + 40%;
+  text-align: center;
+  button,
+  input {
+    .fontOswalt16(13px);
+  }
+  input {
+    width: 80%;
+    display: block;
+    margin: 2rem auto;
+    min-height: 1.5rem;
+    background-color: transparent;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid @baseOposite + 40%;
+    font-size: 1.2rem;
+  }
+  button {
+    width: 7rem;
+    border: 2px solid @baseRuby;
+    background-color: @baseRuby + 80%;
+    transition: all 0.3s ease-in;
+  }
+  button:hover {
+    background-color: @baseRuby;
+    border-radius: 10px;
+    color: @baseWhite;
+    cursor: pointer;
+  }
+
+}
+
+  // Wrong URL
+
+.wrong {
+  width: 20rem;
+  margin: 0 auto;
+  text-align: center;
+  * {
+    .fontOswalt16();
+    letter-spacing: 0.02rem;
+  }
+  span {
+    display: inline;
+    color: @baseRuby;
+  }
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+
+@media screen and ( max-width: 414px) {
+  .app {
+    padding: 1rem 1%;
+  }
+}
+
+  // transitions of React js
+
+.finish-enter {
+  transform: translate(200px);
+  background-color: @baseOrange;
+  transition: all 0.5s ease-in-out;
+  &-active{
+    transform: translate(0);
+    background-color: transparent;
+  }
+}
+
+.finish-leave {
+  transform: translate(0);
+  transition: all 0.5s ease-in-out;
+  &-active {
+    transform: translate(200px);
+    background-color: @baseOrange;
+  }
+}
+
+
+
+.active-enter {
+  transform: translate(200px);
+  background-color: @baseOrange;
+  transition: all 0.5s ease-in-out;
+  &-active{
+    transform: translate(0);
+    background-color: transparent;
+  }
+}
+
+.active-leave {
+  transform: translate(0);
+  transition: all 0.5s ease-in-out;
+  &-active {
+    transform: translate(200px);
+    background-color: @baseOrange;
+  }
+}
+
+.showDiv-enter {
+  opacity: 0;
+  transition: all 0.3s linear;
+  &-active{
+    opacity: 1;
+    transition: all 0.3s linear;
+  }
+}
+
+.showDiv-leave {
+  opacity: 1;
+  transition: all 0.3s linear;
+  &-active{
+    opacity: 0;
+    transition: all 0.3s linear;
+  }
+}

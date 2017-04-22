@@ -1,0 +1,230 @@
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+#wrapper {
+  background-color: #FEF3E2;
+  padding-top: 2rem;
+}
+.app {
+  max-width: 650px;
+  min-height: 15rem;
+  margin: 0 auto;
+  background-color: #FAAF08;
+  border-radius: 0.3rem;
+  border: 2px solid #dc9100;
+  box-shadow: 0 0 10px #FA4032;
+  padding: 1.5rem 8%;
+}
+.app > button {
+  margin: 0 0 1.5rem 0;
+  border: 2px solid #d2180a;
+  border-radius: 0 5px 0 5px;
+  background-color: #e19600;
+  outline: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.8px;
+}
+h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  background-color: #6bbafb;
+  padding: 0.5rem 0;
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: normal;
+}
+span {
+  display: inline-block;
+  width: 20px;
+  vertical-align: top;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: normal;
+}
+.crateTodo {
+  width: 80%;
+}
+.crateTodo h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: normal;
+  background-color: transparent;
+  text-align: left;
+}
+.crateTodo input {
+  width: 100%;
+  height: 1.4rem;
+  border: none;
+  border-bottom: 2px solid #FEF3E2;
+  background-color: transparent;
+  outline: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: normal;
+  color: #FEF3E2;
+  font-weight: 300;
+}
+.crateTodo button {
+  margin-top: 1rem;
+}
+.list-finished,
+.list-active {
+  margin: 0 auto;
+  border: 1px solid #d2180a;
+  border-radius: 0.3rem;
+  box-shadow: 3px 3px 15px #ff685a;
+}
+.list-finished li,
+.list-active li {
+  min-height: 2rem;
+  line-height: 2rem;
+  padding-left: 10px;
+}
+.list-finished li p,
+.list-active li p {
+  display: inline-block;
+  width: 70%;
+  word-break: break-all;
+}
+.list-finished {
+  margin: 2rem 0;
+}
+.list-finished p {
+  text-decoration: line-through;
+  font-style: italic;
+  font-weight: lighter;
+  opacity: 0.4;
+}
+.list-finished span {
+  opacity: 0.4;
+  font-style: italic;
+}
+.loggForm {
+  max-width: 25rem;
+  margin: 2rem auto;
+  min-height: 12rem;
+  border: 1px solid #206fb0;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 15px #70bfff;
+  text-align: center;
+}
+.loggForm button,
+.loggForm input {
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+}
+.loggForm input {
+  width: 80%;
+  display: block;
+  margin: 2rem auto;
+  min-height: 1.5rem;
+  background-color: transparent;
+  text-align: center;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #70bfff;
+  font-size: 1.2rem;
+}
+.loggForm button {
+  width: 7rem;
+  border: 2px solid #FA4032;
+  background-color: #ff9082;
+  transition: all 0.3s ease-in;
+}
+.loggForm button:hover {
+  background-color: #FA4032;
+  border-radius: 10px;
+  color: #FEF3E2;
+  cursor: pointer;
+}
+.wrong {
+  width: 20rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.wrong * {
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.02rem;
+}
+.wrong span {
+  display: inline;
+  color: #FA4032;
+}
+.wrong h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 414px) {
+  .app {
+    padding: 1rem 1%;
+  }
+}
+.finish-enter {
+  transform: translate(200px);
+  background-color: #FAAF08;
+  transition: all 0.5s ease-in-out;
+}
+.finish-enter-active {
+  transform: translate(0);
+  background-color: transparent;
+}
+.finish-leave {
+  transform: translate(0);
+  transition: all 0.5s ease-in-out;
+}
+.finish-leave-active {
+  transform: translate(200px);
+  background-color: #FAAF08;
+}
+.active-enter {
+  transform: translate(200px);
+  background-color: #FAAF08;
+  transition: all 0.5s ease-in-out;
+}
+.active-enter-active {
+  transform: translate(0);
+  background-color: transparent;
+}
+.active-leave {
+  transform: translate(0);
+  transition: all 0.5s ease-in-out;
+}
+.active-leave-active {
+  transform: translate(200px);
+  background-color: #FAAF08;
+}
+.showDiv-enter {
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+.showDiv-enter-active {
+  opacity: 1;
+  transition: all 0.3s linear;
+}
+.showDiv-leave {
+  opacity: 1;
+  transition: all 0.3s linear;
+}
+.showDiv-leave-active {
+  opacity: 0;
+  transition: all 0.3s linear;
+}
